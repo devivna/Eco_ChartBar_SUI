@@ -45,7 +45,7 @@ struct ContentView: View {
     var items: [Item] = [
         Item(
             category: "Пластик",
-            kilo: 6000,
+            kilo: 600,
             fixCountAmount: 2,
             money: 423,
             percent: 0.1,
@@ -112,14 +112,14 @@ struct ContentView: View {
                             .fill(bar.imageColor)
                             .frame(width: 65, height: setHeight(value: bar.kilo))
                             .overlay(alignment: .top) {
-                                Text("\(bar.kilo)")
+                                Text(bar.kilo, format: .number)
                                     .font(.title3)
                                     .fontWeight(.bold)
                                     .padding(5)
                                     .foregroundColor(.white)
                                     .offset (y: setOffset(value: bar.kilo) )
                             }
-                    }
+                   }
                 }
                 
                 LazyVGrid(columns: columns, spacing: 10) {
